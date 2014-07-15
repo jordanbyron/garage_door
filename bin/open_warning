@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/garage_door'
+require 'prowl'
+
+open_time = nil
+notified = false
+
+loop do
+  state = GarageDoor.state
+
+  if state == "open"
+    open_time = Time.now if open_time.nil?
+    if ((Time.now - open_time) / 60) > 5 && !notified
+      Prowl.add(
+        :apikey => ENV['PROWL_API_KEY'],
+        :application => "Garage Door",
+        :event => "Open",
+        :description => "Garage door has been open for over 5 minutes",
+        :priority => 1
+      )
+      notified = true
+    end
+  else
+    open_time = nil
+    notified  = false
+  end
+  
+  sleep 60 # Check every minute
+end
