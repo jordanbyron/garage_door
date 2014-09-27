@@ -1,13 +1,13 @@
 module GarageDoor
-  RELAY=22
+  RELAY = 22
 
-  def self.toggle  
-    pin = PiPiper::Pin.new(pin: RELAY, direction: :out)
-    
-    pin.on
+  def self.toggle
+    gpio.mode RELAY, OUTPUT
+
+    gpio.write RELAY, 1
     sleep 1
-    pin.off
-    
+    gpio.write RELAY, 0
+
     puts "Toggled"
   end
 end
