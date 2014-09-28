@@ -3,7 +3,7 @@ GEM
   specs:
     prowl (0.1.3)
     redis (3.0.7)
-    wiringpi (1.1.0)
+    wiringpi2 (2.0.1)
 
 PLATFORMS
   ruby
@@ -11,4 +11,4 @@ PLATFORMS
 DEPENDENCIES
   prowl
   redis
-  wiringpi
+  wiringpi2

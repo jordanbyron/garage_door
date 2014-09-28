@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'redis'
-gem 'wiringpi'
+gem 'wiringpi2'
 gem 'prowl'
