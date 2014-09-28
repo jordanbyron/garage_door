@@ -1,5 +1,5 @@
 begin
-  require 'wiringpi'
+  require 'wiringpi2'
 rescue Exception => e
   if e.message[/Could not open library/]
     puts "Connection to gpio Failed"
