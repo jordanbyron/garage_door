@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.description = "Library to control my garage door"
 
   s.files = Dir["{bin,lib}/**/*"] +
-    %w{Rakefile README.md LICENSE}
+    %w{README.md LICENSE}
 
   s.add_dependency "prowl",     ">= 0.1.3"
   s.add_dependency "redis",     ">= 3.0.7"
